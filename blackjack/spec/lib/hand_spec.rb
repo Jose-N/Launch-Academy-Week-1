@@ -11,8 +11,10 @@ RSpec.describe Hand do
   end
 
   describe "#recieve_card" do
-    context "it should take the card dealt from the deck" do
-      it "should add a card to the players hand"
+    context "should take the card dealt from the deck" do
+      it "it should add a card to the players hand"
+      it "it should announce which player was dealt which card"
+      it "it should add the worth of the card to the players points"
     end
   end
 end
