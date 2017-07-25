@@ -3,6 +3,8 @@ require_relative "../../lib/deck.rb"
 
 RSpec.describe Deck do
   describe "#initialize" do
+    let (:test_deck) {Deck.new}
+
     context "should create a new deck of cards" do
       it "it should have 52 cards total"
       it "it should have 26 black cards"
