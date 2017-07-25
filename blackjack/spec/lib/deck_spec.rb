@@ -6,7 +6,10 @@ RSpec.describe Deck do
     let (:test_deck) {Deck.new}
 
     context "should create a new deck of cards" do
-      it "it should have 52 cards total"
+      it "it should have 52 cards total" do
+        expect(test_deck.deck.size).to eq(52)
+      end
+
       it "it should have 26 black cards"
       it "it should have 26 red cards"
       it "it should have 13 cards of heart suit"

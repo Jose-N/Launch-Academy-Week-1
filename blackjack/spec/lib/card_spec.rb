@@ -3,7 +3,7 @@ require_relative "../../lib/card.rb"
 
 RSpec.describe Card do
   describe "#initialize" do
-    let (:test_card) {Card.new("Heart", "Queen", 10, "Red")}
+    let (:test_card) {Card.new("Heart", "Queen", 10,)}
 
     context "creates a new card" do
       it "it should have a suit" do
@@ -16,10 +16,6 @@ RSpec.describe Card do
 
       it "it should have a value" do
         expect(test_card.value).to eq(10)
-      end
-
-      it "it should have a color" do
-        expect(test_card.color).to eq("Red")
       end
     end
   end
