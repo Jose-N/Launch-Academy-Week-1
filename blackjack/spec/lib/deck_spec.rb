@@ -1,4 +1,5 @@
 require "spec_helper"
+require_relative "../../lib/deck.rb"
 
 RSpec.describe Deck do
   describe "#initalize" do
