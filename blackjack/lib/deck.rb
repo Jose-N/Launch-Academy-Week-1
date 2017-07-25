@@ -17,4 +17,12 @@ class Deck
       @deck << Card.new(suit, "Ace", nil)
     end
   end
+
+  def shuffle!
+    @deck.shuffle!
+  end
+
+  def deal
+    @deck.pop
+  end
 end

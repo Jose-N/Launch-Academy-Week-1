@@ -57,15 +57,26 @@ RSpec.describe Deck do
   end
 
   describe "#shuffle!" do
+    let (:test_deck) {Deck.new}
+    let (:compare_deck) {Deck.new}
+
     context "should shuffle the deck" do
-      it "shuffled deck should not equal the original deck"
+      it "shuffled deck should not equal the original deck" do
+        test_deck.shuffle!
+
+        expect(test_deck).not_to eq(compare_deck)
+      end
     end
   end
 
   describe "#deal" do
+    let (:test_deck) {Deck.new}
+    let (:compare_deck) {Deck.new}
+
     context "should deal a card" do
-      it "it should return the first card in the deck"
-      it "it should remove that card from the deck"
+      it "it should return the last card in the deck, and remove it from the deck" do
+        expect(test_deck.deal.name).to eq(compare_deck.deck[-1].name)
+      end
     end
   end
 end
