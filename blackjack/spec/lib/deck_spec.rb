@@ -10,12 +10,49 @@ RSpec.describe Deck do
         expect(test_deck.deck.size).to eq(52)
       end
 
-      it "it should have 26 black cards"
-      it "it should have 26 red cards"
-      it "it should have 13 cards of heart suit"
-      it "it should have 13 cards of spade suit"
-      it "it should have 13 cards of club suit"
-      it "it should have 13 cards of diamond"
+      it "it should have 13 cards of heart suit" do
+        heart = []
+        test_deck.deck.each do |card|
+          if card.suit == "Heart"
+            heart << card
+          end
+        end
+
+        expect(heart.size).to eq(13)
+      end
+
+      it "it should have 13 cards of spade suit" do
+        spade = []
+        test_deck.deck.each do |card|
+          if card.suit == "Spade"
+            spade << card
+          end
+        end
+
+        expect(spade.size).to eq(13)
+      end
+
+      it "it should have 13 cards of club suit" do
+        club = []
+        test_deck.deck.each do |card|
+          if card.suit == "Club"
+            club << card
+          end
+        end
+
+        expect(club.size).to eq(13)
+      end
+
+      it "it should have 13 cards of diamond" do
+        diamond = []
+        test_deck.deck.each do |card|
+          if card.suit == "Diamond"
+            diamond << card
+          end
+        end
+
+        expect(diamond.size).to eq(13)
+      end
     end
   end
 
