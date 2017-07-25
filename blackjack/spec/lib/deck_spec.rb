@@ -2,7 +2,7 @@ require "spec_helper"
 require_relative "../../lib/deck.rb"
 
 RSpec.describe Deck do
-  describe "#initalize" do
+  describe "#initialize" do
     context "should create a new deck of cards" do
       it "it should have 52 cards total"
       it "it should have 26 black cards"
