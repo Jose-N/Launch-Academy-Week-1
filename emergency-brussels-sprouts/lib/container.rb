@@ -9,14 +9,16 @@ class Container
   end
 
   def fill_with_ingredient(filler)
+    count = 0
     times_can_add = @maximum_holding_weight / filler.weight
 
     times_can_add.to_i.times do
       @ingredients.push(filler) 
-      @weight += filler.weight
+      count += 1
     end
 
-    @weight = @weight.round
+    @weight = @weight + filler.weight * count
+    #@weight = @weight.round
   end
 
   def which_ingredient
