@@ -1,3 +1,5 @@
+require_relative 'card'
+
 class Deck
   SUIT = ["Heart", "Spade", "Club", "Diamond"]
   FACE = ["Queen", "King", "Jack"]
