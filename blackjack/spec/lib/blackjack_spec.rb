@@ -1,5 +1,5 @@
 require "spec_helper"
-require_relative "../../lib/blackjack.rb"
+#require_relative "../../lib/blackjack.rb"
 
 RSpec.describe Game do
   describe "#initialize" do
