@@ -1,17 +1,14 @@
 class Hand
   attr_reader :name, :hand, :points
 
-  def initialize(name)
+  def initialize(name, hand = [])
     @name = name
-    @hand = []
+    @hand = hand
     @points = 0
   end
 
   def recieve_card(deck)
     @hand << deck.deal 
-    while check_points > 21 && check_ace?
-      over_21_with_ace
-    end
     check_points
 
     puts "#{@name} was dealt a #{@hand[-1].name} of #{@hand[-1].suit}"
@@ -31,14 +28,13 @@ class Hand
   end
 
   def over_21_with_ace
-    if @points > 21 && check_ace?
-      @hand.each do |card|
-        if card.name == "Ace" && card.value == 11
-          card.value = 1
-          break
-        end
+    @hand.each do |card|
+      if card.name == "Ace" && card.value == 11
+        card.value = 1
+        break
       end
     end
+    check_points
   end
 
   def check_points
@@ -46,6 +42,8 @@ class Hand
     @hand.each do |card|
       @points += card.value
     end
-    return @points
+    while @points > 21 && check_ace?
+      over_21_with_ace
+    end
   end
 end

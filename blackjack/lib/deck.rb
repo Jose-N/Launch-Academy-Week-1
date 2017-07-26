@@ -16,7 +16,7 @@ class Deck
         @deck << Card.new(suit, i.to_s, i)
         i += 1
       end
-      @deck << Card.new(suit, "Ace", 1)
+      @deck << Card.new(suit, "Ace", 11)
     end
   end
 
