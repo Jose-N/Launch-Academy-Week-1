@@ -1,21 +1,25 @@
+
 class Board
+attr_reader :board
+
   def initialize
     @board = make_board
   end
 
-  def board
-    @board
-  end
-
   def make_board
-    row = []
-    column = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ]
-    9.times { row << column} 
-    return row
+    board = []
+    10.times do
+      row = []
+      10.times do
+        row << ' '
+      end
+      board << row
+    end
+    return board
   end
 
   def display_board
-    index = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+    index = ['', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
     @board.each do |r|
       r.each_with_index do |c, index|
         if index == 0

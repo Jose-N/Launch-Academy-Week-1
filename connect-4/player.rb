@@ -27,18 +27,19 @@ class Player
     when 'i'
       user_choice = 8
     end
-    puts user_choice
     return user_choice
   end
 
   def place_piece(board, letter)
-    board.board[-1][turn_index_into_number(letter)] << @symbol
-    return nil
+    number = turn_index_into_number(letter)
+
   end
 end
 
 jose = Player.new('Jose', 'x')
 board = Board.new
 
+8.times do
 jose.place_piece(board, 'h')
 board.display_board
+end

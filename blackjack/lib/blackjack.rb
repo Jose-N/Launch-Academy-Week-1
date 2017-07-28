@@ -1,3 +1,4 @@
+require_relative 'heh'
 require_relative "card"
 require_relative "deck"
 require_relative "hand"
@@ -20,13 +21,16 @@ class Play
 
     while stand == false && @game_over == false
       puts "Would you like to Hit or Stand (H/S)"
-      if gets.chomp.downcase == 's'
+      answer = gets.chomp.downcase
+      if answer == 's'
         stand = true
-      elsif
+      elsif answer == 'h'
         player_round
         bust
         dealer_ai
         bust
+      elsif answer == 'flip table'
+        flip_table
       end
     end
 
